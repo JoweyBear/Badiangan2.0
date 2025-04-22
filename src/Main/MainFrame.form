@@ -6,9 +6,6 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="fileMenu">
           <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="File"/>
           </Properties>
           <AuxValues>
@@ -17,9 +14,6 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mapMenuItem">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Map"/>
               </Properties>
               <Events>
@@ -31,9 +25,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="logoutMenuItem">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Logout"/>
               </Properties>
               <Events>
@@ -45,9 +36,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="exitMenuItem">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Exit"/>
               </Properties>
               <Events>
@@ -61,9 +49,6 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="beneMenu">
           <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Beneficiary"/>
           </Properties>
           <AuxValues>
@@ -72,9 +57,6 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="beneMenuItem">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Beneficiaries"/>
               </Properties>
               <Events>
@@ -86,9 +68,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="fmMenuItem">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Family Members"/>
               </Properties>
               <Events>
@@ -100,9 +79,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="cropsMenuItem">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Crops/Trees"/>
               </Properties>
               <Events>
@@ -114,9 +90,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="lsMenuItem">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Livestocks"/>
               </Properties>
               <Events>
@@ -130,9 +103,6 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="disasterMenu">
           <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Disaster"/>
           </Properties>
           <AuxValues>
@@ -141,9 +111,6 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="evacSitesMenuItem">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Evacuation Sites"/>
               </Properties>
               <Events>
@@ -155,9 +122,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="disasterMenuItem">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Disasters"/>
               </Properties>
               <Events>
@@ -169,9 +133,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Hazard"/>
               </Properties>
               <Events>
@@ -182,9 +143,6 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="manageMenu">
           <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Manage"/>
           </Properties>
           <AuxValues>
@@ -193,9 +151,6 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="adminMenuItem">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Admin"/>
               </Properties>
               <Events>
@@ -207,9 +162,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="brgyMenuItem">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Brgy"/>
               </Properties>
               <Events>
@@ -223,9 +175,6 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="reportMenu">
           <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Report"/>
           </Properties>
           <AuxValues>
@@ -234,9 +183,6 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="regMenuItem">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Registration"/>
               </Properties>
               <Events>
@@ -248,9 +194,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="farMenuItem">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Family Assistance Record"/>
               </Properties>
               <Events>
@@ -262,9 +205,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="harvestMenuItem">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Crops Harvest"/>
               </Properties>
               <Events>
@@ -276,9 +216,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="disposalMenuItem">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Livestocks Disposal"/>
               </Properties>
               <Events>
@@ -290,9 +227,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Evacuation"/>
               </Properties>
               <Events>
@@ -301,9 +235,6 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="MHRO"/>
               </Properties>
               <Events>

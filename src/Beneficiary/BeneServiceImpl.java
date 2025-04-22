@@ -1019,7 +1019,7 @@ public class BeneServiceImpl implements BeneService {
     }
 
     @Override
-    public void liveStoclPopupVisible(PopupMenuEvent e) {
+    public void liveStockPopupVisible(PopupMenuEvent e) {
         SwingUtilities.invokeLater(() -> {
             int rowAtPoint = bp.livestockTable.rowAtPoint(SwingUtilities.
                     convertPoint(bp.livestockPopMenu, new Point(0, 0), bp.livestockTable));

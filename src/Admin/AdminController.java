@@ -16,13 +16,14 @@ public class AdminController {
 
     public AdminController(AdminPanel ap) {
         this.ap = ap;
+        service = new AdminServiceImpl(ap);
         this.ap.allListener(new OpenAddAdminDialog(),
                 new SaveAdminClass(), new EditAdminClass(), new UpdateAdminClass(),
                 new DeleteAdminClass(), new ResetFieldsClass(), new CloseDialogClass(),
                 new MyPopUpMenu(), new MyPopUpMenu(),
                 new ViewAdminClass(), new EditAdminClass(), new OpenAddAdminDialog(),
                 new DeleteAdminClass());
-        service = new AdminServiceImpl(ap);
+
     }
 
     class OpenAddAdminDialog implements ActionListener {
@@ -99,12 +100,10 @@ public class AdminController {
 
         @Override
         public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         }
 
         @Override
         public void popupMenuCanceled(PopupMenuEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         }
 
     }

@@ -14,7 +14,7 @@ public class MapController {
     public MapController(MapPanel mpp, MainFrame mf) {
         this.mpp = mpp;
         this.mf = mf;
-
+        service = new MapServiceImpl(mpp,mf);
         this.mpp.allListener(new Action(), new DisasterCBBHandler(mpp.disasterCBB));
     }
 

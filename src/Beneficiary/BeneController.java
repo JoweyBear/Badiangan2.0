@@ -195,12 +195,10 @@ public class BeneController {
         
         @Override
         public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         }
         
         @Override
         public void popupMenuCanceled(PopupMenuEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         }
     }
     
@@ -218,12 +216,10 @@ public class BeneController {
         
         @Override
         public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         }
         
         @Override
         public void popupMenuCanceled(PopupMenuEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         }
     }
     
@@ -244,7 +240,7 @@ public class BeneController {
         
         @Override
         public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
-            service.liveStoclPopupVisible(e);
+            service.liveStockPopupVisible(e);
         }
         
         @Override

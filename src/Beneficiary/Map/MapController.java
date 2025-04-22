@@ -25,6 +25,7 @@ public class MapController {
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == mpp.saveBtn) {
                 service.saveLoc();
+                System.out.println("savebutton clicked");
             }
         }
     }

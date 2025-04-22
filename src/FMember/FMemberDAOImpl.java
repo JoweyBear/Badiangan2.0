@@ -1,7 +1,7 @@
 package FMember;
 
 import DBConnection.DB;
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -91,7 +91,7 @@ public class FMemberDAOImpl implements FMemberDAO {
             stmt.setString(9, fm.getOcc());
             stmt.setString(10, fm.getRemarks());
             stmt.execute();
-        } catch(MySQLIntegrityConstraintViolationException ex)
+        } catch(SQLIntegrityConstraintViolationException ex)
         {
             JOptionPane.showMessageDialog(null, "Username already taken", "Error", JOptionPane.ERROR_MESSAGE);
         } 

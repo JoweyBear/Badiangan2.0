@@ -419,6 +419,7 @@ public class MainFrame extends javax.swing.JFrame {
         mp = new MapPanel();
         setConfig();
         new MapController(mp, this);
+//        
 //        CardLayout cl = (CardLayout) (mainPanel.getLayout());
 //        mainPanel.add(mp,"MapPanel");
 //        cl.show(mainPanel, "MapPanel");  

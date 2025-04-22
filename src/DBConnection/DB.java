@@ -19,7 +19,7 @@ public class DB {
             String password = Settings.password;  //password of the database
             //String url = "jdbc:mysql://localhost/badiangan";  //the database that will be used
             String url = Settings.url;
-            Class.forName("com.mysql.jdbc.Driver"); //the driver of the database
+            Class.forName("com.mysql.cj.jdbc.Driver"); //the driver of the database
             conn = DriverManager.getConnection(url, userName, password);
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(DB.class.getName()).log(Level.SEVERE, null, ex);
@@ -41,4 +41,10 @@ public class DB {
         }
         return conn;
     }
+//        public static void main(String[] args) throws SQLException {
+//        System.out.println(getConnection());
+////        System.out.println(DriverManager.getDriver("jdbc:mysql://").getClass().getName());
+//
+//    }
 }
+

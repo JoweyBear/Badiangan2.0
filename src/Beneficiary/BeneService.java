@@ -57,7 +57,7 @@ public interface BeneService {
     
     void farmerStateChanged(ItemEvent e);
     void liveStockPopupMenu(MouseEvent e);
-    void liveStoclPopupVisible(PopupMenuEvent e);
+    void liveStockPopupVisible(PopupMenuEvent e);
     void memberPopupMenu(MouseEvent e);
     void memberPopupVisible(PopupMenuEvent e);
     
