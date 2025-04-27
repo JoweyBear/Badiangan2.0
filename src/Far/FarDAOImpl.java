@@ -65,13 +65,13 @@ public class FarDAOImpl implements FarDAO {
         } catch (SQLException ex) {
             Logger.getLogger(FarDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "Please check inputs" + ex, "Error", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            try {
-                conn.close();
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Cannot close connection to DB!");
-                Logger.getLogger(FarModel.class.getName()).log(Level.SEVERE, null, ex);
-            }
+//        } finally {
+//            try {
+//                conn.close();
+//            } catch (SQLException ex) {
+//                JOptionPane.showMessageDialog(null, "Cannot close connection to DB!");
+//                Logger.getLogger(FarModel.class.getName()).log(Level.SEVERE, null, ex);
+//            }
         }
     }
 
@@ -93,13 +93,13 @@ public class FarDAOImpl implements FarDAO {
         } catch (SQLException ex) {
             Logger.getLogger(FarModel.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, ex);
-        } finally {
-            try {
-                conn.close();
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Cannot close connection of DB!");
-                Logger.getLogger(FarModel.class.getName()).log(Level.SEVERE, null, ex);
-            }
+//        } finally {
+//            try {
+//                conn.close();
+//            } catch (SQLException ex) {
+//                JOptionPane.showMessageDialog(null, "Cannot close connection of DB!");
+//                Logger.getLogger(FarModel.class.getName()).log(Level.SEVERE, null, ex);
+//            }
         }
     }
 
@@ -112,13 +112,13 @@ public class FarDAOImpl implements FarDAO {
         } catch (SQLException ex) {
             Logger.getLogger(FarModel.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, ex);
-        } finally {
-            try {
-                conn.close();
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Cannot close connection to DB!");
-                Logger.getLogger(FarDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
-            }
+//        } finally {
+//            try {
+//                conn.close();
+//            } catch (SQLException ex) {
+//                JOptionPane.showMessageDialog(null, "Cannot close connection to DB!");
+//                Logger.getLogger(FarDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+//            }
         }
 
     }

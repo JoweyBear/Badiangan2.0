@@ -64,8 +64,8 @@ public class HazardServiceImpl implements HazardService {
 
     @Override
     public void openMapToGetLoc() {
-        MapPanel mpp = new MapPanel();
-        new MapController(mpp, hazp);
+        HazMapPanel mpp = new HazMapPanel();
+        new HazMapController(mpp, hazp);
     }
 
     @Override
@@ -130,9 +130,8 @@ public class HazardServiceImpl implements HazardService {
         if (dataRow >= 0) {
             double lt = (Double.parseDouble(hazp.table.getValueAt(dataRow, 2).toString()));
             double lg = (Double.parseDouble(hazp.table.getValueAt(dataRow, 3).toString()));
-            MapPanel mpp = new MapPanel();
-            new MapServiceImpl(mpp, hazp, lt, lg);
-            new MapController(mpp, hazp);
+            HazMapPanel mpp = new HazMapPanel();
+            new HazMapController(mpp, hazp, lt, lg);
         } else {
             JOptionPane.showMessageDialog(hazp, "Please select a hazard to view in map.");
         }

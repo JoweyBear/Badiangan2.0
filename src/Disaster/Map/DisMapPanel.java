@@ -13,12 +13,12 @@ import java.awt.event.MouseAdapter;
  *
  * @author John Rey Alipe
  */
-public class MapPanel extends javax.swing.JPanel{
+public class DisMapPanel extends javax.swing.JPanel{
 
     /**
      * Creates new form MapPanel
      */
-    public MapPanel() {
+    public DisMapPanel() {
         initComponents();
         mapDialog.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/title.png")));
     }

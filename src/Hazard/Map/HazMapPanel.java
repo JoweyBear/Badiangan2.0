@@ -12,12 +12,12 @@ import java.awt.event.ActionListener;
  *
  * @author John Rey Alipe
  */
-public class MapPanel extends javax.swing.JPanel{
+public class HazMapPanel extends javax.swing.JPanel{
 
     /**
      * Creates new form MapPanel
      */
-    public MapPanel() {
+    public HazMapPanel() {
         initComponents();
         mapDialog.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/title.png")));
     }

@@ -21,12 +21,12 @@ import org.jxmapviewer.painter.Painter;
 import org.jxmapviewer.viewer.GeoPosition;
 import org.jxmapviewer.viewer.WaypointPainter;
 
-public class MapServiceImpl implements MapService {
+public class EvacMapServiceImpl implements EvacMapService {
 
     EvacPanel ep;
-    MapPanel mpp;
+    EvacMapPanel mpp;
 
-    public MapServiceImpl(MapPanel mpp, EvacPanel ep) {
+    public EvacMapServiceImpl(EvacMapPanel mpp, EvacPanel ep) {
         this.mpp = mpp;
         this.ep = ep;
 
@@ -34,14 +34,23 @@ public class MapServiceImpl implements MapService {
         initMarker(mapViewer);
     }
 
-    public MapServiceImpl(MapPanel mpp, EvacPanel ep, double locLat, double locLong) {
+    public EvacMapServiceImpl(EvacMapPanel mpp, EvacPanel ep, double locLat, double locLong) {
         this.mpp = mpp;
         this.ep = ep;
 
         JXMapViewer mapViewer = MapGenerate.generateMap();
         setMarker(mapViewer, new GeoPosition(locLat, locLong));
     }
-
+    @Override
+    public void showMap() {
+        mpp.mapDialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        mpp.mapDialog.setModal(true);
+        mpp.mapDialog.setPreferredSize(new Dimension(MapDimension.W, MapDimension.H));
+        mpp.mapDialog.setSize(new Dimension(MapDimension.W, MapDimension.H));
+        mpp.mapDialog.setLocationRelativeTo(null);
+        mpp.mapDialog.setTitle("Map Dialog");
+        mpp.mapDialog.pack();
+        mpp.mapDialog.setVisible(true);    }
     @Override
     public void initMarker(JXMapViewer mapViewer) {
         Painter<JXMapViewer> origOverLay = (Painter<JXMapViewer>) mapViewer.getOverlayPainter();
@@ -72,15 +81,8 @@ public class MapServiceImpl implements MapService {
         });
 
         //JDialog mapDialog = new JDialog();
-        mpp.mapDialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-        mpp.mapDialog.setModal(true);
-        mpp.mapDialog.setPreferredSize(new Dimension(MapDimension.W, MapDimension.H));
-        mpp.mapDialog.setSize(new Dimension(MapDimension.W, MapDimension.H));
         mpp.mapPanel.add(mapViewer);
-        mpp.mapDialog.setLocationRelativeTo(null);
-        mpp.mapDialog.setTitle("Map Dialog");
-        mpp.mapDialog.pack();
-        mpp.mapDialog.setVisible(true);
+
     }
 
     @Override
@@ -128,5 +130,7 @@ public class MapServiceImpl implements MapService {
         mpp.mapDialog.pack();
         mpp.mapDialog.setVisible(true);
     }
+
+
 
 }

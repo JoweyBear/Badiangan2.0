@@ -66,14 +66,14 @@ public class EvacServiceImpl implements EvacService {
 
     @Override
     public void openMapToGetLoc() {
-        MapPanel mpp = new MapPanel();
-        new MapController(mpp, ep);
+        EvacMapPanel mpp = new EvacMapPanel();
+        new EvacMapController(mpp, ep);
     }
 
     @Override
     public void openMapToEditLoc() {
-        MapPanel mpp = new MapPanel();
-        new MapController(mpp, ep);
+        EvacMapPanel mpp = new EvacMapPanel();
+        new EvacMapController(mpp, ep);
     }
 
     @Override

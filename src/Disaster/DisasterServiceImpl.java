@@ -74,8 +74,8 @@ public class DisasterServiceImpl implements DisasterService {
 
     @Override
     public void openMapToGetLoc() {
-        MapPanel mpp = new MapPanel();
-        new MapController(mpp, disp);
+        DisMapPanel mpp = new DisMapPanel();
+        new DisMapController(mpp, disp);
     }
 
     @Override
@@ -165,10 +165,8 @@ public class DisasterServiceImpl implements DisasterService {
             double lt = (Double.parseDouble(disp.table.getValueAt(dataRow, 4).toString()));
             double lg = (Double.parseDouble(disp.table.getValueAt(dataRow, 5).toString()));
             double rad = (Double.parseDouble(disp.table.getValueAt(dataRow, 6).toString()));
-            MapPanel mpp = new MapPanel();
-            new MapServiceImpl(mpp, disp, lt, lg, rad);
-            new MapController(mpp, disp);
-
+            DisMapPanel mpp = new DisMapPanel();
+            new DisMapController(mpp, disp, lt, lg, rad);
         } else {
             JOptionPane.showMessageDialog(disp, "Please select a disaster to view in map.");
         }

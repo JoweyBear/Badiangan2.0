@@ -46,13 +46,13 @@ public class EvacDAOImpl implements EvacDAO {
         } catch (SQLException ex) {
             Logger.getLogger(EvacModel.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "Please check inputs" + ex, "Error", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            try {
-                conn.close();
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Cannot close connection to DB!");
-                Logger.getLogger(EvacModel.class.getName()).log(Level.SEVERE, null, ex);
-            }
+//        } finally {
+//            try {
+//                conn.close();
+//            } catch (SQLException ex) {
+//                JOptionPane.showMessageDialog(null, "Cannot close connection to DB!");
+//                Logger.getLogger(EvacModel.class.getName()).log(Level.SEVERE, null, ex);
+//            }
         }
     }
 
@@ -71,16 +71,16 @@ public class EvacDAOImpl implements EvacDAO {
             Logger.getLogger(EvacDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, ex);
         }
-        finally
-        {
-            try {
-                conn.close();
-            } catch (SQLException ex) 
-            {
-                JOptionPane.showMessageDialog(null, "Cannot close connection of DB!");
-                Logger.getLogger(EvacDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+//        finally
+//        {
+//            try {
+//                conn.close();
+//            } catch (SQLException ex) 
+//            {
+//                JOptionPane.showMessageDialog(null, "Cannot close connection of DB!");
+//                Logger.getLogger(EvacDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
     }
 
     @Override
@@ -93,16 +93,16 @@ public class EvacDAOImpl implements EvacDAO {
             Logger.getLogger(EvacModel.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, ex);
         }
-        finally
-        {
-            try {
-                conn.close();
-            } catch (SQLException ex)
-            {
-                JOptionPane.showMessageDialog(null, "Cannot close connection to DB!");
-                Logger.getLogger(EvacModel.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+//        finally
+//        {
+//            try {
+//                conn.close();
+//            } catch (SQLException ex)
+//            {
+//                JOptionPane.showMessageDialog(null, "Cannot close connection to DB!");
+//                Logger.getLogger(EvacModel.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
     }
 
 }

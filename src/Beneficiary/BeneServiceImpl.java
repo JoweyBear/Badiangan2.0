@@ -1,6 +1,7 @@
 package Beneficiary;
 
-import Beneficiary.Map.*;
+import Beneficiary.Map.BeneMapController;
+import Beneficiary.Map.BeneMapPanel;
 import Crop.*;
 import FMember.*;
 import LiveStock.*;
@@ -588,8 +589,12 @@ public class BeneServiceImpl implements BeneService {
 
     @Override
     public void openMapToGetLoc() {
-        MapPanel mpp = new MapPanel();
-        new MapController(mpp, bp);
+//        BeneMapPanel mpp = new BeneMapPanel();
+//        new BeneMapController(mpp, bp);
+    BeneMapPanel mpp = new BeneMapPanel();
+    new BeneMapController(mpp, bp); 
+    System.out.println("openMap");
+
     }
 
     @Override
@@ -633,7 +638,7 @@ public class BeneServiceImpl implements BeneService {
 
                 DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
                 Date dateobj = new Date();
-                
+
                 RegModel reg = new RegModel();
                 reg.setAdminID(Integer.parseInt(mf.adminIDTF.getText()));
                 reg.setBeneID(Integer.parseInt(title.substring(title.indexOf(":") + 1)));
@@ -714,23 +719,24 @@ public class BeneServiceImpl implements BeneService {
     public void viewBeneInMap() {
         int dataRow = bp.beneTable.getSelectedRow();
         if (dataRow >= 0) {
-            MapPanel mpp = new MapPanel();
-            new MapServiceImpl(mpp, bp,
+            BeneMapPanel mpp = new BeneMapPanel();
+            new BeneMapController(mpp, bp,
                     Double.parseDouble(bp.beneTable.getValueAt(dataRow, 18).toString()),
                     Double.parseDouble(bp.beneTable.getValueAt(dataRow, 19).toString())
             );
-            new MapController(mpp, bp);
         } else {
             JOptionPane.showMessageDialog(bp.addBeneDialog,
                     "Please select a beneficiary to view.", "No Item Selected",
                     JOptionPane.INFORMATION_MESSAGE);
         }
+        System.out.println("ViewBene");
     }
 
     @Override
     public void editBeneLoc() {
-        MapPanel mpp = new MapPanel();
-        new MapController(mpp, bp);
+        BeneMapPanel mpp = new BeneMapPanel();
+        new BeneMapController(mpp, bp);
+        System.out.println("EditBene");
     }
 
     @Override

@@ -4,18 +4,26 @@ import Hazard.HazardPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MapController {
+public class HazMapController {
 
     HazardPanel hazp;
-    MapPanel mpp;
-    MapService service;
+    HazMapPanel mpp;
+    HazMapService service;
 
-    public MapController(MapPanel mpp, HazardPanel hazp) {
+    public HazMapController(HazMapPanel mpp, HazardPanel hazp) {
         this.mpp = mpp;
         this.hazp = hazp;
-        service = new MapServiceImpl(mpp, hazp);
+        service = new HazMapServiceImpl(mpp, hazp);
         this.mpp.allListener(new Action());
+        service.showMap();
+    }
 
+    public HazMapController(HazMapPanel mpp, HazardPanel hazp, double locLat, double locLong) {
+        this.mpp = mpp;
+        this.hazp = hazp;
+        service = new HazMapServiceImpl(mpp, hazp, locLat, locLong);
+        this.mpp.allListener(new Action());
+        service.showMap();
     }
 
     class Action implements ActionListener {

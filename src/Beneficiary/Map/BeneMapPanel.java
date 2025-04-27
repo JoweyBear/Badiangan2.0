@@ -6,6 +6,7 @@
 package Beneficiary.Map;
 
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 
@@ -13,14 +14,15 @@ import java.awt.event.MouseAdapter;
  *
  * @author John Rey Alipe
  */
-public class MapPanel extends javax.swing.JPanel{
+public class BeneMapPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form MapPanel
      */
-    public MapPanel() {
+    public BeneMapPanel() {
         initComponents();
         mapDialog.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/title.png")));
+
     }
 
     /**
@@ -119,9 +121,14 @@ public class MapPanel extends javax.swing.JPanel{
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    public void allListener(ActionListener a, MouseAdapter m)
-    {
-        saveBtn.addActionListener(a);
+//    public void allListener(ActionListener a, MouseAdapter m) {
+//        saveBtn.addActionListener(a);
+//    }
+    public void saveListener(ActionListener e) {
+        saveBtn.addActionListener(e);
+        System.out.println("Listener added");
+        System.out.println("Listener added to saveBtn: " + saveBtn.hashCode());
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

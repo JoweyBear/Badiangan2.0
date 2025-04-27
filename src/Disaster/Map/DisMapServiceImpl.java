@@ -27,13 +27,13 @@ import org.jxmapviewer.painter.CompoundPainter;
 import org.jxmapviewer.painter.Painter;
 import org.jxmapviewer.viewer.GeoPosition;
 
-public class MapServiceImpl implements MapService {
+public class DisMapServiceImpl implements DisMapService {
 
     Color disColor = new Color(255, 0, 0, 150);
     DisasterPanel dp;
     int index = 0;
     JXMapViewer mapViewer;
-    MapPanel mpp;
+    DisMapPanel mpp;
     Painter<JXMapViewer> origOverLay;
     List<Painter<JXMapViewer>> painters;
 
@@ -51,7 +51,7 @@ public class MapServiceImpl implements MapService {
     int zoomMult = 1;
     int zoomValue = 7;
 
-    public MapServiceImpl(MapPanel mpp, DisasterPanel dp) {
+    public DisMapServiceImpl(DisMapPanel mpp, DisasterPanel dp) {
         this.mpp = mpp;
         this.dp = dp;
 
@@ -61,7 +61,7 @@ public class MapServiceImpl implements MapService {
         initMarker();
     }
 
-    public MapServiceImpl(MapPanel mpp, DisasterPanel dp, double lt, double lg, double rad) {
+    public DisMapServiceImpl(DisMapPanel mpp, DisasterPanel dp, double lt, double lg, double rad) {
         this.mpp = mpp;
         this.dp = dp;
         this.lt = lt;
@@ -74,6 +74,17 @@ public class MapServiceImpl implements MapService {
         setMarker();
 
     }
+
+    @Override
+    public void showMap() {
+        mpp.mapDialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        mpp.mapDialog.setModal(true);
+        mpp.mapDialog.setPreferredSize(new Dimension(MapDimension.W, MapDimension.H));
+        mpp.mapDialog.setSize(new Dimension(MapDimension.W, MapDimension.H));
+        mpp.mapDialog.setLocationRelativeTo(null);
+        mpp.mapDialog.setTitle("Map Dialog");
+        mpp.mapDialog.pack();
+        mpp.mapDialog.setVisible(true);    }
 
     @Override
     public void showOval() {
@@ -249,15 +260,8 @@ public class MapServiceImpl implements MapService {
         });
 
         //JDialog mapDialog = new JDialog();
-        mpp.mapDialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-        mpp.mapDialog.setModal(true);
-        mpp.mapDialog.setPreferredSize(new Dimension(MapDimension.W, MapDimension.H));
-        mpp.mapDialog.setSize(new Dimension(MapDimension.W, MapDimension.H));
         mpp.mapPanel.add(mapViewer);
-        mpp.mapDialog.setLocationRelativeTo(null);
-        mpp.mapDialog.setTitle("Map Dialog");
-        mpp.mapDialog.pack();
-        mpp.mapDialog.setVisible(true);
+
     }
 
     @Override

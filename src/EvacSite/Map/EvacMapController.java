@@ -4,17 +4,26 @@ import EvacSite.EvacPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MapController {
+public class EvacMapController {
 
     EvacPanel ep;
-    MapPanel mpp;
-    MapService service;
+    EvacMapPanel mpp;
+    EvacMapService service;
 
-    public MapController(MapPanel mpp, EvacPanel ep) {
+    public EvacMapController(EvacMapPanel mpp, EvacPanel ep) {
         this.mpp = mpp;
         this.ep = ep;
-        service = new MapServiceImpl(mpp, ep);
+        service = new EvacMapServiceImpl(mpp, ep);
         this.mpp.allListener(new Action());
+        service.showMap();
+    }
+
+    public EvacMapController(EvacMapPanel mpp, EvacPanel ep, double locLat, double locLong) {
+        this.mpp = mpp;
+        this.ep = ep;
+        service = new EvacMapServiceImpl(mpp, ep, locLat, locLong);
+        this.mpp.allListener(new Action());
+        service.showMap();
     }
 
     class Action implements ActionListener {

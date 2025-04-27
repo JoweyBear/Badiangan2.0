@@ -58,13 +58,13 @@ public class RegDAOImpl implements RegDAO {
         } catch (SQLException ex) {
             Logger.getLogger(RegModel.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "Please check inputs" + ex, "Error", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            try {
-                conn.close();
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Cannot close connection to DB!");
-                Logger.getLogger(RegModel.class.getName()).log(Level.SEVERE, null, ex);
-            }
+//        } finally {
+//            try {
+//                conn.close();
+//            } catch (SQLException ex) {
+//                JOptionPane.showMessageDialog(null, "Cannot close connection to DB!");
+//                Logger.getLogger(RegModel.class.getName()).log(Level.SEVERE, null, ex);
+//            }
         }
     }
 
@@ -79,13 +79,13 @@ public class RegDAOImpl implements RegDAO {
         } catch (SQLException ex) {
             Logger.getLogger(RegModel.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, ex);
-        } finally {
-            try {
-                conn.close();
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Cannot close connection to DB!");
-                Logger.getLogger(RegModel.class.getName()).log(Level.SEVERE, null, ex);
-            }
+//        } finally {
+//            try {
+//                conn.close();
+//            } catch (SQLException ex) {
+//                JOptionPane.showMessageDialog(null, "Cannot close connection to DB!");
+//                Logger.getLogger(RegModel.class.getName()).log(Level.SEVERE, null, ex);
+//            }
         }
     }
 
