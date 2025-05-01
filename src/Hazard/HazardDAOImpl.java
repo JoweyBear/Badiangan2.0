@@ -61,7 +61,7 @@ public class HazardDAOImpl implements HazardDAO {
     public void updatHazard(HazardModel hzrd) {
         try {
             conn = DB.getConnection();
-            String sql = "Update hazard set desc = ? , "
+            String sql = "Update hazard set description = ? , "
                     + "lt = ? , lg = ? where haz_id = '" + hzrd.getHazardID() + "'";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, hzrd.getDesc());

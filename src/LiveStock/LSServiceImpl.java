@@ -144,12 +144,12 @@ public class LSServiceImpl implements LSService {
         LSModel ls = new LSModel();
         ls.setLsID(Integer.parseInt(lsp.idLbl.getText()));
         ls.setBeneID(Integer.parseInt(str.substring(str.indexOf(":") + 1, str.indexOf(")"))));
-        ls.setLs(lsp.lsTF.getText());
-        ls.setClassi(lsp.classificationTF.getText());
-        ls.setHeads(Alter.getInt(lsp.headsSpin));
-        ls.setAge(Alter.getInt(lsp.ageSpin));
-        ls.setExp(((JTextField) lsp.expDC.getDateEditor().getUiComponent()).getText());
-        ls.setRemarks(lsp.remarksTA.getText());
+        ls.setLs(lsp.lsTF1.getText());
+        ls.setClassi(lsp.classificationTF1.getText());
+        ls.setHeads(Alter.getInt(lsp.headsSpin1));
+        ls.setAge(Alter.getInt(lsp.ageSpin1));
+        ls.setExp(((JTextField) lsp.expDC1.getDateEditor().getUiComponent()).getText());
+        ls.setRemarks(lsp.remarksTA1.getText());
         dao.updateLS(ls);
         lsp.editDialog.dispose();
         displayAllLS();

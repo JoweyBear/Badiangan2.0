@@ -33,6 +33,9 @@ public class FarController {
             if (e.getSource() == fp.okBtn) {
                 service.saveFar();
             }
+            if (e.getSource() == fp.okBtn1) {
+                service.updateFar();
+            }
             if (e.getSource() == fp.editBtn) {
                 service.editFar();
             }

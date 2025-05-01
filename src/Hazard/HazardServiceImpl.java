@@ -101,9 +101,9 @@ public class HazardServiceImpl implements HazardService {
     public void updateHazard() {
         HazardModel hzrd = new HazardModel();
         hzrd.setHazardID(Integer.parseInt(hazp.idLbl.getText()));
-        hzrd.setDesc(hazp.descTF.getText());
-        hzrd.setLatt(Alter.getDouble(hazp.latSpin));
-        hzrd.setLongt(Alter.getDouble(hazp.longSpin));
+        hzrd.setDesc(hazp.descTF1.getText());
+        hzrd.setLatt(Alter.getDouble(hazp.latSpin1));
+        hzrd.setLongt(Alter.getDouble(hazp.longSpin1));
         dao.updatHazard(hzrd);
         hazp.editDialog.dispose();
         displayAllHazard();

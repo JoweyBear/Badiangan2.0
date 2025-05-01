@@ -16,6 +16,7 @@ import javax.swing.JPopupMenu;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellEditor;
 import net.proteanit.sql.DbUtils;
 
@@ -81,19 +82,12 @@ public class FarServiceImpl implements FarService {
 
     @Override
     public void displayAllFar() {
-        ResultSet rs = dao.getAllFar();
-        fp.table.setModel(DbUtils.resultSetToTableModel(rs));
-        // this is to disable editing in the jtable
-        for (Class c : Arrays.asList(Object.class, Number.class, Boolean.class)) {
-            TableCellEditor ce = fp.table.getDefaultEditor(c);
-            if (ce instanceof DefaultCellEditor) {
-                ((DefaultCellEditor) ce).setClickCountToStart(Integer.MAX_VALUE);
-            }
-        }
+        DefaultTableModel model = dao.getAllFar();
+        fp.table.setModel(model);
         fp.table.getColumnModel().getColumn(0).setMinWidth(0);
         fp.table.getColumnModel().getColumn(0).setMaxWidth(50);
         fp.table.getColumnModel().getColumn(0).setPreferredWidth(25);
-        new SearchModel(fp, fp.table, fp.searchTF, rs);
+        new SearchDefaultModel(fp, fp.table, fp.searchTF, model);
     }
 
     @Override
@@ -102,7 +96,8 @@ public class FarServiceImpl implements FarService {
         int dataRow = fp.table.getSelectedRow();
         if (dataRow >= 0) {
             fp.idLbl.setText(fp.table.getValueAt(dataRow, 0).toString());
-
+            fp.beneCBB1.setSelectedItem(fp.table.getValueAt(dataRow, 1).toString());
+            fp.disCBB1.setSelectedItem(fp.table.getValueAt(dataRow, 3).toString());
             try {
                 Date date;
                 date = new SimpleDateFormat("yyyy-MM-dd").parse(fp.table.getValueAt(dataRow, 4).toString());
@@ -110,12 +105,13 @@ public class FarServiceImpl implements FarService {
             } catch (ParseException ex) {
                 Logger.getLogger(FarServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
             }
-
+            
             fp.typeCBB1.setSelectedItem(fp.table.getValueAt(dataRow, 5).toString());
             fp.qtySpin1.setValue(Integer.parseInt(fp.table.getValueAt(dataRow, 6).toString()));
             fp.costSpin1.setValue(Double.parseDouble(fp.table.getValueAt(dataRow, 7).toString()));
             fp.providerTF1.setText(fp.table.getValueAt(dataRow, 8).toString());
             fp.editDialog.setTitle("Edit FAR");
+            fp.okBtn1.setVisible(false);
             fp.editDialog.setModal(true);
             fp.editDialog.pack();
             fp.editDialog.setLocationRelativeTo(null);
@@ -152,6 +148,28 @@ public class FarServiceImpl implements FarService {
 
     @Override
     public void updateFar() {
+        Object dis_id = null;
+        JTextField text = (JTextField) fp.beneCBB1.getEditor().getEditorComponent();
+        String str = text.getText();
+        JTextField text1 = (JTextField) fp.disCBB1.getEditor().getEditorComponent();
+        String str1 = text1.getText();
+        if (str1.contains(":")) {
+            dis_id = Integer.parseInt(str1.substring(str1.indexOf(":") + 1, str1.indexOf(")")));
+            str1 = str1.substring(str1.indexOf(")") + 2);
+        }
+        FarModel far = new FarModel();
+        far.setFarID(Integer.parseInt(fp.idLbl.getText()));
+        far.setBeneID(Integer.parseInt(str.substring(str.indexOf(":") + 1, str.indexOf(")"))));
+        far.setDisID(dis_id);
+        far.setDuring(str1);
+        far.setDate(Alter.gatDate(fp.dateDC1));
+        far.setType(Alter.getString(fp.typeCBB1));
+        far.setQty(Alter.getInt(fp.qtySpin1));
+        far.setCost(Alter.getDouble(fp.costSpin1));
+        far.setProvider(fp.providerTF1.getText());
+        dao.update(far);
+        fp.editDialog.dispose();
+        displayAllFar();
     }
 
     @Override

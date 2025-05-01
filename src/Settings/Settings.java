@@ -19,7 +19,7 @@ public class Settings
     public static String password = "1234";
     //url of db
     //public static String url = "jdbc:mysql://192.168.1.250/badiangan";
-    public static String url = "jdbc:mysql://localhost/badiangan";
+    public static String url = "jdbc:mysql://localhost/faster2";
     
     //offline map
     public static TileFactoryInfo info = new OSMTileFactoryInfo("","jar:file:tiles/tiles.zip!");

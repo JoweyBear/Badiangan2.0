@@ -11,6 +11,7 @@ import javax.swing.JPopupMenu;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellEditor;
 import net.proteanit.sql.DbUtils;
 
@@ -57,19 +58,12 @@ public class FMemberServiceImpl implements FMemberService {
     @Override
     public void displayAllFM() {
         //this is to load all the schedules in the database upon selecting the Event Scheduler in the menu bar
-        ResultSet rs = dao.getAllFM();
-        fmp.fmTable.setModel(DbUtils.resultSetToTableModel(rs));
-        // this is to disable editing in the jtable
-        for (Class c : Arrays.asList(Object.class, Number.class, Boolean.class)) {
-            TableCellEditor ce = fmp.fmTable.getDefaultEditor(c);
-            if (ce instanceof DefaultCellEditor) {
-                ((DefaultCellEditor) ce).setClickCountToStart(Integer.MAX_VALUE);
-            }
-        }
+        DefaultTableModel model = dao.getAllFM();
+        fmp.fmTable.setModel(model);
         fmp.fmTable.getColumnModel().getColumn(0).setMinWidth(0);
         fmp.fmTable.getColumnModel().getColumn(0).setMaxWidth(100);
         fmp.fmTable.getColumnModel().getColumn(0).setPreferredWidth(50);
-        new SearchModel(fmp, fmp.fmTable, fmp.searchTF, rs);
+        new SearchDefaultModel(fmp, fmp.fmTable, fmp.searchTF, model);
     }
 
     @Override

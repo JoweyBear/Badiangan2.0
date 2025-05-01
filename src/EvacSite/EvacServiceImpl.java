@@ -91,9 +91,9 @@ public class EvacServiceImpl implements EvacService {
     public void updateEvac() {
         EvacModel evac = new EvacModel();
         evac.setEvacID(Alter.toInt(ep.idLbl.getText()));
-        evac.setName(ep.nameTF.getText());
-        evac.setLatt(Alter.getDouble(ep.latSpin));
-        evac.setLongt(Alter.getDouble(ep.longSpin));
+        evac.setName(ep.nameTF1.getText());
+        evac.setLatt(Alter.getDouble(ep.latSpin1));
+        evac.setLongt(Alter.getDouble(ep.longSpin1));
         dao.updateEvac(evac);
         ep.editDialog.dispose();
         displayAllEvac();

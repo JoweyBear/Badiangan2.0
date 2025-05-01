@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+import javax.swing.table.DefaultTableModel;
 import net.proteanit.sql.DbUtils;
 
 public class RegServiceImpl implements RegService {
@@ -21,9 +22,9 @@ public class RegServiceImpl implements RegService {
 
     @Override
     public void displayAllReg() {
-        ResultSet rs = dao.getAllReg();
-        rp.table.setModel(DbUtils.resultSetToTableModel(rs));
-        new SearchModel(rp, rp.table, rp.searchTF, rs);
+        DefaultTableModel model = dao.getAllReg();
+        rp.table.setModel(model);
+        new SearchDefaultModel(rp, rp.table, rp.searchTF, model);
     }
 
     @Override

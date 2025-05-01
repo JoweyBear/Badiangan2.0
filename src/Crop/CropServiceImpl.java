@@ -177,12 +177,12 @@ public class CropServiceImpl implements CropService {
         CropModel crop = new CropModel();
         crop.setCropID(Integer.parseInt(cp.idLbl.getText()));
         crop.setBeneID(Integer.parseInt(str.substring(str.indexOf(":") + 1, str.indexOf(")"))));
-        crop.setCrop(cp.cropTF.getText());
-        crop.setArea(Alter.getDouble(cp.areaSpin));
-        crop.setVariety(cp.varietyTF.getText());
-        crop.setClassification(cp.classificationTF.getText());
-        crop.setDate(((JTextField) cp.expDC.getDateEditor().getUiComponent()).getText());
-        crop.setRemarks(cp.remarksTA.getText());
+        crop.setCrop(cp.cropTF1.getText());
+        crop.setArea(Alter.getDouble(cp.areaSpin1));
+        crop.setVariety(cp.varietyTF1.getText());
+        crop.setClassification(cp.classificationTF1.getText());
+        crop.setDate(((JTextField) cp.expDC1.getDateEditor().getUiComponent()).getText());
+        crop.setRemarks(cp.remarksTA1.getText());
         dao.updateCrop(crop);
         cp.editDialog.dispose();
         displayAllCrops();

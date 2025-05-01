@@ -152,13 +152,13 @@ public class AdminServiceImpl implements AdminService {
     public void save() {
         if (ap.jPasswordField1.getText().equals(ap.jPasswordField2.getText())) {
             AdminModel admin = new AdminModel();
-            admin.setUsername(ap.unTF1.getText());
-            admin.setPassword(ap.jPasswordField3.getText());
-            admin.setFname(ap.fNameTF1.getText());
-            admin.setMname(ap.mNameTF1.getText());
-            admin.setLname(ap.lNameTF1.getText());
-            admin.setDepartment(ap.departmentCB1.getSelectedItem().toString());
-            admin.setPosition(ap.positionCB1.getSelectedItem().toString());
+            admin.setUsername(ap.unTF.getText());
+            admin.setPassword(ap.jPasswordField1.getText());
+            admin.setFname(ap.fNameTF.getText());
+            admin.setMname(ap.mNameTF.getText());
+            admin.setLname(ap.lNameTF.getText());
+            admin.setDepartment(ap.departmentCB.getSelectedItem().toString());
+            admin.setPosition(ap.positionCB.getSelectedItem().toString());
             dao.saveAdmin(admin);
             displayAllAdmin();
         } else {

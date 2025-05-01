@@ -127,13 +127,13 @@ public class DisasterServiceImpl implements DisasterService {
     public void updateDisaster() {
         DisasterModel dsstr = new DisasterModel();
         dsstr.setDisasterID(Integer.parseInt(disp.idLbl.getText()));
-        dsstr.setType(Alter.getString(disp.typeCBB));
-        dsstr.setName(disp.nameTF.getText());
-        dsstr.setDate(Alter.gatDate(disp.dateDC));
-        dsstr.setLatt(Alter.getDouble(disp.latSpin));
-        dsstr.setLongt(Alter.getDouble(disp.longSpin));
-        dsstr.setRad(Alter.getDouble(disp.radSpin));
-        dsstr.setRemarks(disp.remarksTA.getText());
+        dsstr.setType(Alter.getString(disp.typeCBB1));
+        dsstr.setName(disp.nameTF1.getText());
+        dsstr.setDate(Alter.gatDate(disp.dateDC1));
+        dsstr.setLatt(Alter.getDouble(disp.latSpin1));
+        dsstr.setLongt(Alter.getDouble(disp.longSpin1));
+        dsstr.setRad(Alter.getDouble(disp.radSpin1));
+        dsstr.setRemarks(disp.remarksTA1.getText());
         dao.updateDisasters(dsstr);
         disp.editDialog.dispose();
         displayAllDisasters();

@@ -40,9 +40,8 @@ public class BeneMapController {
         mpp.saveBtn.addActionListener(e -> {
             System.out.println("Save button clicked!");
             service.saveLoc();
-            ((Window)SwingUtilities.getWindowAncestor(mpp)).dispose();
         });
-        service.showMap();
+//        service.showMap();
 
 //        this.mpp.allListener(new Action(), new Mouse());
     }

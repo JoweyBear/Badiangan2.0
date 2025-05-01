@@ -9,6 +9,7 @@ import Main.MainFrame;
 import Registration.*;
 import Util.Alter;
 import Util.BrgyModel;
+import Util.SearchDefaultModel;
 import Util.SearchModel;
 import java.awt.Point;
 import java.awt.event.ItemEvent;
@@ -270,13 +271,13 @@ public class BeneServiceImpl implements BeneService {
     @Override
     public void displayAllBene() {
         if (mf.deptLbl.getText().equals("MAO")) {
-            ResultSet rs = dao.getAllFarmer();
-            bp.beneTable.setModel(DbUtils.resultSetToTableModel(rs));
-            new SearchModel(bp, bp.beneTable, bp.searchTF, rs);
+            DefaultTableModel model = dao.getAllFarmer();
+            bp.beneTable.setModel(model);
+            new SearchDefaultModel(bp, bp.beneTable, bp.searchTF, model);
         } else {
-            ResultSet rs = dao.getAllBene();
-            bp.beneTable.setModel(DbUtils.resultSetToTableModel(rs));
-            new SearchModel(bp, bp.beneTable, bp.searchTF, rs);
+            DefaultTableModel model = dao.getAllBene();
+            bp.beneTable.setModel(model);
+            new SearchDefaultModel(bp, bp.beneTable, bp.searchTF, model);
         }
     }
 
@@ -591,9 +592,9 @@ public class BeneServiceImpl implements BeneService {
     public void openMapToGetLoc() {
 //        BeneMapPanel mpp = new BeneMapPanel();
 //        new BeneMapController(mpp, bp);
-    BeneMapPanel mpp = new BeneMapPanel();
-    new BeneMapController(mpp, bp); 
-    System.out.println("openMap");
+        BeneMapPanel mpp = new BeneMapPanel();
+        new BeneMapController(mpp, bp);
+        System.out.println("openMap");
 
     }
 
@@ -612,24 +613,26 @@ public class BeneServiceImpl implements BeneService {
 
                 BeneModel bene = new BeneModel();
                 bene.setBeneID(Integer.parseInt(title.substring(title.indexOf(":") + 1)));
-                bene.setFname(bp.fNameTF1.getText());
-                bene.setMname(bp.mNameTF1.getText());
-                bene.setLname(bp.lNameTF1.getText());
-                bene.setSex(bp.sexMaleRB1.isSelected() ? "Male" : "Female");
-                bene.setDob(((JTextField) bp.dobDC1.getDateEditor().getUiComponent()).getText());
+                bene.setFname(bp.fNameTF.getText());
+                bene.setMname(bp.mNameTF.getText());
+                bene.setLname(bp.lNameTF.getText());
+                bene.setSex(bp.sexMaleRB.isSelected() ? "Male" : "Female");
+                bene.setDob(((JTextField) bp.dobDC.getDateEditor().getUiComponent()).getText());
                 bene.setBrgy(brgyStr);
-                bene.setCode(bp.codeCB1.getSelectedItem().toString());
-                bene.setFourPs(bp.fourpsYesRB1.isSelected() ? "Yes" : "No");
-                bene.setIndigency(bp.indigentYesRB1.isSelected() ? "Yes" : "No");
-                bene.setHea(bp.heaCB1.getSelectedItem().toString());
-                bene.setEthnicity(bp.ethnicityTF1.getText());
-                bene.setNetIncome(Double.parseDouble(bp.netIncomeSpin1.getValue().toString()));
-                bene.setOcc(bp.occTF1.getText());
-                bene.setHealthCond(bp.healthCondCB1.getSelectedItem().toString());
-                bene.setHouseStat(bp.houseStatCB1.getSelectedItem().toString());
-                bene.setContactNum(bp.contactNumTF1.getText());
-                bene.setLocLong(Double.parseDouble(locStr.substring(0, locStr.indexOf(","))));
-                bene.setLocLat(Double.parseDouble(locStr.substring(locStr.indexOf(",") + 1, locStr.length())));
+                bene.setCode(bp.codeCB.getSelectedItem().toString());
+                bene.setFourPs(bp.fourpsYesRB.isSelected() ? "Yes" : "No");
+                bene.setIndigency(bp.indigentYesRB.isSelected() ? "Yes" : "No");
+                bene.setHea(bp.heaCB.getSelectedItem().toString());
+                bene.setEthnicity(bp.ethnicityTF.getText());
+                bene.setNetIncome(Double.parseDouble(bp.netIncomeSpin.getValue().toString()));
+                bene.setOcc(bp.occTF.getText());
+                bene.setHealthCond(bp.healthCondCB.getSelectedItem().toString());
+                bene.setHouseStat(bp.houseStatCB.getSelectedItem().toString());
+                bene.setHouseCond(bp.houseCondCB.getSelectedItem().toString());
+                bene.setContactNum(bp.contactNumTF.getText());
+                bene.setLocLong(Double.parseDouble(locStr.substring(locStr.indexOf(",") + 1, locStr.length())));
+                bene.setLocLat(Double.parseDouble(locStr.substring(0, locStr.indexOf(","))));
+
                 dao.saveBene(bene);
 
                 saveFMemberToDB();
@@ -767,9 +770,10 @@ public class BeneServiceImpl implements BeneService {
             bene.setOcc(bp.occTF1.getText());
             bene.setHealthCond(bp.healthCondCB1.getSelectedItem().toString());
             bene.setHouseStat(bp.houseStatCB1.getSelectedItem().toString());
+            bene.setHouseCond(bp.houseCondCB1.getSelectedItem().toString());
             bene.setContactNum(bp.contactNumTF1.getText());
-            bene.setLocLong(Double.parseDouble(locStr.substring(0, locStr.indexOf(","))));
-            bene.setLocLat(Double.parseDouble(locStr.substring(locStr.indexOf(",") + 1, locStr.length())));
+            bene.setLocLong(Double.parseDouble(locStr.substring(locStr.indexOf(",") + 1, locStr.length())));
+            bene.setLocLat(Double.parseDouble(locStr.substring(0, locStr.indexOf(","))));
 
             dao.updateBene(bene);
             bp.editBeneDialog.dispose();
